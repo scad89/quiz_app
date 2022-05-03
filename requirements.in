@@ -1,0 +1,16 @@
+flask
+flask-restful
+flask-script
+SQLAlchemy
+python-dotenv
+pip-compile-multi
+psycopg2
+psycopg2-binary
+wtforms
+
+
+
+
+
+
+

@@ -1,3 +1,4 @@
-sand/
-text/
+/sand
+/text
 *.pyc
+.env
