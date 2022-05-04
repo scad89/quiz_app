@@ -1,4 +1,4 @@
-from .database import db
+from .garbage.database import db
 
 
 class QuizQuestion(db.Model):
@@ -12,3 +12,9 @@ class QuizQuestion(db.Model):
 
     def __str__(self):
         return self.id_question
+
+    def json(self):
+        return {"id_question": self.id_question,
+                "question": self.question,
+                "answer": self.answer,
+                "created_date": self.created_date}

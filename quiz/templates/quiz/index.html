@@ -1,0 +1,16 @@
+{% extends 'quiz/layout.html'%}
+
+{% block title %}Главная страница{% endblock %}
+
+
+{% block content %}
+
+<form action="/index.html" method="post">
+    Enter a number for the number of questions:<br>
+    <input type="text" name="firstname" value=""><br><br>
+    <input type="submit" value="Submit">
+</form>
+
+
+
+{% endblock %}
