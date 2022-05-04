@@ -1,12 +1,14 @@
-flask
+flask==1.1.4
 flask-restful
 flask-script
-SQLAlchemy
+flask-sqlalchemy
+markupsafe
 python-dotenv
 pip-compile-multi
 psycopg2
 psycopg2-binary
 wtforms
+werkzeug
 
 
 
