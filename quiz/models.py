@@ -1,4 +1,4 @@
-from .garbage.database import db
+from app import db
 
 
 class QuizQuestion(db.Model):
