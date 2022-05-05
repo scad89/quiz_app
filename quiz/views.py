@@ -15,8 +15,7 @@ def rate():
     number = request.form.get('number')
     int_num = check_num(number)
     if int_num:
-        response = get_question(int_num)
-        record_data_in_db(response)
+        get_question(int_num)
         last_question = return_last_question()
         return render_template('question.html', last_question=last_question)
     else:
