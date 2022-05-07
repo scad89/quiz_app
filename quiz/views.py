@@ -1,22 +1,11 @@
-from flask import render_template, request, Blueprint
-from services import get_question, check_num, record_data_in_db, return_last_question
+from flask import request
+from services import get_question, return_last_question
+from flask_restful import Resource
 
 
-app_route = Blueprint('route', __name__)
-
-
-@app_route.route('/')
-def main():
-    return render_template('index.html')
-
-
-@app_route.route('/question', methods=["POST"])
-def rate():
-    number = request.form.get('number')
-    int_num = check_num(number)
-    if int_num:
-        get_question(int_num)
+class QuestionView(Resource):
+    def post(self):
+        data = request.get_json()
+        get_question(data["questions_num"])
         last_question = return_last_question()
-        return render_template('question.html', last_question=last_question)
-    else:
-        return render_template('error_num.html')
+        return last_question

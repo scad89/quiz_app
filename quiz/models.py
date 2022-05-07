@@ -11,7 +11,7 @@ class QuizQuestion(db.Model):
     created_date = db.Column(db.DateTime)
 
     def __str__(self):
-        return self.id_question
+        return {"id_question": self.id_question}
 
     def json(self):
         return {"id_question": self.id_question,
