@@ -14,6 +14,8 @@ app.config.from_object(os.environ.get("APP_SETTINGS"))
 api = Api(app)
 db = SQLAlchemy(app)
 db.init_app(app)
+db.create_all()
+db.session.commit()
 migrate = Migrate(app, db)
 api.add_resource(QuestionView, '/question')
 

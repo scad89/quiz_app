@@ -3,3 +3,4 @@
 /my_test
 *.pyc
 .env
+.env.docker
