@@ -10,7 +10,7 @@ load_dotenv()
 
 
 app = Flask(__name__)
-app.config.from_object(os.environ.get("APP_SETTINGS"))
+app.config.from_pyfile('config.py')
 api = Api(app)
 db = SQLAlchemy(app)
 db.init_app(app)
@@ -21,4 +21,4 @@ api.add_resource(QuestionView, '/question')
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0')
